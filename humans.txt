@@ -1,0 +1,23 @@
+# humanstxt.org
+
+# The humans responsible & technology colophon
+
+
+
+# TEAM
+
+    Developer: Anthony E. Alvarez<name> -- Webmaster -- @AnthonyEAlvarez
+    Contact: vhibmxqwq@mozmail.com
+    Twitter: @anthonyealvarez
+
+# THANKS
+
+
+
+
+
+# TECHNOLOGY COLOPHON
+
+
+
+    CSS, HTML, GIT, GitHub, JavaScript, Twitter Bootstrap
