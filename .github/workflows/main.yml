@@ -12,7 +12,9 @@ jobs:
   
   render website:
     name: Screenshot Website
+    runs-on: ubuntu-latest
     steps:
+      - name: Screenshot Website Step
       - uses: swinton/screenshot-website@v1.x
         with:
           source: https://github.com/swinton/screenshot-website
