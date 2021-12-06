@@ -9,3 +9,11 @@ jobs:
       - uses: ./action-a
         with:
           MY_NAME: "Anthony"
+  
+  render website:
+    name: Screenshot Website
+    steps:
+      - uses: swinton/screenshot-website@v1.x
+        with:
+          source: https://github.com/swinton/screenshot-website
+          destination: screenshot.png
