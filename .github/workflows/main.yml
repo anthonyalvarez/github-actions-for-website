@@ -19,3 +19,14 @@ jobs:
         with:
           source: https://cynthiasam.com/
           destination: screenshot.png
+
+  healthcheck:
+    runs-on: ubuntu-latest
+    name: Check for status 200 and title text "Cynthia Sam"
+    steps:
+      - uses: actions/checkout@v2
+      - id: test
+        uses: johnlokerse/website-healthcheck@v2
+        with:
+          web-url: "https://cynthiasam.com"
+          scan-for-text: "Cynthia Sam"
