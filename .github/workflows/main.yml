@@ -9,3 +9,13 @@ jobs:
       - uses: ./action-a
         with:
           MY_NAME: "Anthony"
+  
+  render:
+    name: Screenshot Website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Screenshot Website Step
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: https://cynthiasam.com/
+          destination: screenshot.png
