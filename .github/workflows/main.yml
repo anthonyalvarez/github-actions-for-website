@@ -30,3 +30,11 @@ jobs:
         with:
           web-url: "https://cynthiasam.com"
           scan-for-text: "Cynthia Sam"
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test for public javascript library vulnerabilities 
+        uses: lirantal/is-website-vulnerable@master
+        with:
+          scan-url: "https://cynthiasam.com"
