@@ -22,7 +22,7 @@ jobs:
 
   healthcheck:
     runs-on: ubuntu-latest
-    name: Check for status 200 and title text "Cynthia Sam"
+    name: Check status code
     steps:
       - uses: actions/checkout@v2
       - id: test
@@ -33,7 +33,7 @@ jobs:
 
   broken_link_checker_1:
     runs-on: ubuntu-latest
-    name: Check for broken links
+    name: 1. Broken links check
     steps:
       - name: Check for broken links
         id: link-report
@@ -43,11 +43,11 @@ jobs:
 
   broken_link_checker_2:
     runs-on: ubuntu-latest
-    name: Check for broken links
+    name: 2. Broken links check
     steps:
       - name: Check for broken links
         id: link-report
         uses: elliotforbes/broken-link-checker@1.0.2
         with:
-          url: "https://cynthiasam.com"
+          url: "https://anthonyalvarez.us"
           cmd_params: "--exclude=google.com --buffer-size=8192 --max-connections=10 --color=always --verbose"
