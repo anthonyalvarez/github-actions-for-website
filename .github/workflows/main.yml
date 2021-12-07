@@ -11,10 +11,10 @@ jobs:
           MY_NAME: "Anthony"
   
   render:
-    name: Screenshot Website
+    name: Screenshot
     runs-on: ubuntu-latest
     steps:
-      - name: Screenshot Website Step
+      - name: Taking Website Screenshot
         uses: swinton/screenshot-website@v1.x
         with:
           source: https://cynthiasam.com/
@@ -22,7 +22,7 @@ jobs:
 
   healthcheck:
     runs-on: ubuntu-latest
-    name: Check for status 200 and title text "Cynthia Sam"
+    name: Status Checks 
     steps:
       - uses: actions/checkout@v2
       - id: test
@@ -34,10 +34,10 @@ jobs:
 
   lighthouse:
     runs-on: ubuntu-latest
-    name: Lighthouse CI Action
+    name: Lighthouse
     steps:
       - uses: actions/checkout@v2
-      - name: Audit URLs using Lighthouse
+      - name: Running Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v8
         with:
           urls: |
@@ -45,3 +45,16 @@ jobs:
           budgetPath: ./budget.json # test performance budgets
           uploadArtifacts: true # save results as an action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+
+  speedtest:
+    runs-on: ubuntu-latest
+    name: Page Speed Insights
+    steps:
+      - name: Running Page Speed Insights
+        uses: jakepartusch/psi-action@v1.2
+        id: psi
+        with:
+          url: "https://cynthiasam.com"
+          threshold: 70
+          strategy: mobile
+          key: ${{ secrets.PAGESPEEDINSIGHTS }}
