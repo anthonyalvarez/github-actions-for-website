@@ -31,7 +31,7 @@ jobs:
           web-url: "https://cynthiasam.com"
           scan-for-text: "Cynthia Sam"
 
-  broken_link_checker:
+  broken_link_checker_1:
     runs-on: ubuntu-latest
     name: Check for broken links
     steps:
@@ -40,3 +40,14 @@ jobs:
         uses: elliotforbes/broken-link-checker@1.0.2
         with:
           url: 'https://cynthiasam.com'
+
+  broken_link_checker_2:
+    runs-on: ubuntu-latest
+    name: Check for broken links
+    steps:
+      - name: Check for broken links
+        id: link-report
+        uses: elliotforbes/broken-link-checker@1.0.2
+        with:
+          url: "https://cynthiasam.com"
+          cmd_params: "--exclude=google.com --buffer-size=8192 --max-connections=10 --color=always --verbose"
