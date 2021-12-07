@@ -39,7 +39,7 @@ jobs:
         id: link-report
         uses: elliotforbes/broken-link-checker@1.0.2
         with:
-          url: 'https://cynthiasam.com'
+          url: 'https://puchowebsolutions.com'
 
   broken_link_checker_2:
     runs-on: ubuntu-latest
@@ -49,5 +49,5 @@ jobs:
         id: link-report
         uses: elliotforbes/broken-link-checker@1.0.2
         with:
-          url: "https://anthonyalvarez.us"
+          url: "https://pucho.com"
           cmd_params: "--exclude=google.com --buffer-size=8192 --max-connections=10 --color=always --verbose"
