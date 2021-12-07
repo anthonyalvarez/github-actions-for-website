@@ -22,7 +22,7 @@ jobs:
 
   healthcheck:
     runs-on: ubuntu-latest
-    name: Check for status 200 and title text "Cynthia Sam"
+    name: Check for status 200 and text 
     steps:
       - uses: actions/checkout@v2
       - id: test
@@ -33,6 +33,7 @@ jobs:
 
   minifier:
     runs-on: ubuntu-latest      # Docker-based github actions have to run on a linux environment
+    name: HTML/CSS/JS Minifier
     steps:
       - name: HTML/CSS/JS Minifier
         uses: docker://devatherock/minify-js:1.0.3
