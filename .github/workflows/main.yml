@@ -81,7 +81,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.2.0
       with:
-        dry-run: true 
+        dry-run: false 
         protocol: ftps
         server-dir: /home/cynthias/public_html/githubaction/
         server: ${{ secrets.FTP_HOSTNAME}}
