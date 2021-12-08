@@ -58,3 +58,15 @@ jobs:
           threshold: 70
           strategy: mobile
           key: ${{ secrets.PAGESPEEDINSIGHTS }}
+
+  notifications:
+    runs-on: ubuntu-latest
+    name: Push.techulus.com
+    steps:
+      - name: Sending Push Notification
+        uses: techulus/push-github-action@1.0.0
+        env:
+          API_KEY: ${{ secrets.PUSH_TECHULUS_API_KEY }}
+          MESSAGE: "Test notification from GitHub 🧪"
+          TITLE: GitHub Actions Workflow Testing
+          LINK: ${{ secrets.PUBLIC_WEB_URL }}
