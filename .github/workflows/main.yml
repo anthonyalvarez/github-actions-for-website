@@ -58,3 +58,23 @@ jobs:
           threshold: 70
           strategy: mobile
           key: ${{ secrets.PAGESPEEDINSIGHTS }}
+
+  visualizer:
+    runs-on: ubuntu-latest
+    name: Running Repo Visualizer
+    steps:
+      - name: Checkout code
+      uses: actions/checkout@master
+      - name: Update SVG diagram
+        id: make_diagram
+        uses: githubocto/repo-visualizer@0.7.1
+        with:
+          should_push: false
+          output_file: "output-diagram.svg"
+          artifact_name: "my-diagram"
+      - name: Get artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: "my-diagram"
+          path: "downloads"
+
