@@ -70,3 +70,20 @@ jobs:
           MESSAGE: "Test notification from GitHub 🧪"
           TITLE: GitHub Actions Workflow Testing
           LINK: ${{ secrets.PUBLIC_WEB_URL }}
+
+  ftp-web-deploy:
+    name: 🚀 Deploy website on push
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      with:
+        dry-run: true 
+        protocol: ftps
+        server-dir: /home/cynthias/public_html/githubaction/
+        server: ${{ secrets.FTP_HOSTNAME}}
+        username: ${{ secrets.FTP_USERNAME}}
+        password: ${{ secrets.FTP_PASSWORD }}
