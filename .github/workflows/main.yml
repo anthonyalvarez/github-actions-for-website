@@ -69,4 +69,4 @@ jobs:
           API_KEY: ${{ secrets.PUSH_TECHULUS_API_KEY }}
           MESSAGE: "Test notification from GitHub 🧪"
           TITLE: GitHub Actions Workflow Testing
-          LINK: ${{ PUBLIC_WEB_URL }}
+          LINK: ${{ secrets.PUBLIC_WEB_URL }}
