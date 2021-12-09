@@ -17,7 +17,7 @@ jobs:
       - name: Taking Website Screenshot
         uses: swinton/screenshot-website@v1.x
         with:
-          source: https://cynthiasam.com/
+          source: ${{ secrets.PUBLIC_WEB_URL }}
           destination: screenshot.png
 
   healthcheck:
@@ -28,7 +28,7 @@ jobs:
       - id: test
         uses: johnlokerse/website-healthcheck@v2
         with:
-          web-url: "https://cynthiasam.com"
+          web-url: ${{ secrets.PUBLIC_WEB_URL }}
           scan-for-text: "Cynthia Sam"
 
 
@@ -41,7 +41,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v8
         with:
           urls: |
-            https://cynthiasam.com/
+            ${{ secrets.PUBLIC_WEB_URL }}
           budgetPath: ./budget.json # test performance budgets
           uploadArtifacts: true # save results as an action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
@@ -54,7 +54,7 @@ jobs:
         uses: jakepartusch/psi-action@v1.2
         id: psi
         with:
-          url: "https://cynthiasam.com"
+          url: ${{ secrets.PUBLIC_WEB_URL }}
           threshold: 70
           strategy: mobile
           key: ${{ secrets.PAGESPEEDINSIGHTS }}
