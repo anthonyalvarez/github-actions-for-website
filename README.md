@@ -15,11 +15,11 @@ Please copy the main.yml file and create the appropriate GitHub Secrets in your 
 
 GitHub Secrets required for this workflow.
 
-    1. FTP username
-    1. FTP password
-    1. FTP remote path
-    1. FTP server
-    1. website URL
+1. FTP username
+1. FTP password
+2. FTP remote path
+3. FTP server
+4. website URL
 
 
 ## Actions used in this repo
