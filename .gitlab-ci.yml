@@ -1,0 +1,43 @@
+stages:
+  - build
+  - screenshot
+  - healthcheck
+  - lighthouse
+  - speedtest
+  - notifications
+  - ftp-web-deploy
+
+build_job:
+  stage: build
+  script:
+    - echo "Running action-a with MY_NAME=Anthony"
+
+screenshot_job:
+  stage: screenshot
+  script:
+    - echo "Taking screenshot of website specified in PUBLIC_WEB_URL and saving to screenshot.png"
+
+healthcheck_job:
+  stage: healthcheck
+  script:
+    - echo "Running website health check and scanning for the text 'Cynthia Sam'"
+
+lighthouse_job:
+  stage: lighthouse
+  script:
+    - echo "Running Lighthouse performance audit on website specified in PUBLIC_WEB_URL, saving results as artifacts, and uploading to temporary storage."
+
+speedtest_job:
+  stage: speedtest
+  script:
+    - echo "Running Page Speed Insights on website specified in PUBLIC_WEB_URL with mobile strategy and threshold 70"
+
+notifications_job:
+  stage: notifications
+  script:
+    - echo "Sending push notification with message 'Test notification from GitHub 🧪', title 'GitHub Actions Workflow Testing', and link specified in PUBLIC_WEB_URL"
+
+ftp-web-deploy_job:
+  stage: ftp-web-deploy
+  script:
+    - echo "Checking out latest code and synchronizing files to FTP server specified in FTP_HOSTNAME, FTP_USERNAME, FTP_PASSWORD, and FTP_REMOTE_PATH"
